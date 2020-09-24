@@ -45,11 +45,11 @@ app.post("/api/notes", function(req, res){
             if(err) throw err;
 
             console.log("it worked");
-        })
+        });
 
         console.log(savedNotes);
         return res.json(savedNotes)
-    })
+    });
 });
 
 app.delete("/api/notes/:id", function(req, res) {
@@ -69,7 +69,7 @@ app.delete("/api/notes/:id", function(req, res) {
         });
 
         return res.json(alteredSavedNotes)
-    })
+    });
 });
 
 app.listen(PORT, function () {
