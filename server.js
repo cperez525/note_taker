@@ -29,6 +29,8 @@ app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/index.html"))
 })
 
+
+
 app.post("/api/notes", function(req, res){
 
     let createNote = req.body
@@ -41,7 +43,7 @@ app.post("/api/notes", function(req, res){
         let savedNotes = JSON.parse(data)
         savedNotes.push(createNote)
 
-        fs.appendFile(path.join(__dirname,"/db/db.json"), JSON.stringify(savedNotes), function(err) {
+        fs.writeFile(path.join(__dirname,"/db/db.json"), JSON.stringify(savedNotes), function(err) {
 
             if (err) throw err;
 
