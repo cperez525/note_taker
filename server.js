@@ -52,7 +52,7 @@ app.post("/api/notes", function(req, res){
     })
 });
 
-app.delete("/api/notes/:id"), function(req, res) {
+app.delete("/api/notes/:id", function(req, res) {
 
     fs.readFile(path.join(__dirname, "/db/db.json"), function(err, data) {
 
@@ -66,7 +66,7 @@ app.delete("/api/notes/:id"), function(req, res) {
             if(err) throw err;
 
             console.log(alteredSavedNotes)
-        })
+        });
 
         return res.json(alteredSavedNotes)
     })
