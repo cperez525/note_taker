@@ -13,6 +13,13 @@ html, body {
   margin-right: 15px;
   font-size: 1.5rem;
   cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.icons i:hover {
+
+  background-color: rgba(179, 58, 2, 0.699);
+  transition: all .3s ease-in-out;
 }
 
 .note-textarea, .note-title {
