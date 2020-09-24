@@ -43,11 +43,8 @@ app.post("/api/notes", function(req, res){
         fs.writeFile(path.join(__dirname, "/db/db.json"), JSON.stringify(savedNotes), function(err) {
 
             if(err) throw err;
-
-            console.log("it worked");
         });
 
-        console.log(savedNotes);
         return res.json(savedNotes)
     });
 });
@@ -64,8 +61,6 @@ app.delete("/api/notes/:id", function(req, res) {
         fs.writeFile(path.join(__dirname, "/db/db.json"), JSON.stringify(alteredSavedNotes), function(err) {
 
             if(err) throw err;
-
-            console.log(alteredSavedNotes)
         });
 
         return res.json(alteredSavedNotes)
